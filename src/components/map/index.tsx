@@ -14,19 +14,7 @@ interface Route {
   positions: LatLngExpression[];
 }
 
-const LocateControl = () => {
-  const map = useMap();
-
-  useEffect(() => {
-    const locateControl = map.locate;
-    locateControl.addTo(map);
-  }, [map]);  
-
-  return null;
-};
-
 const MapComponent: React.FC = () => {
-  const [routes, setRoutes] = useState<Route[]>([]);
   const headquarters: LatLngExpression = [-6.1390, 106.8650]; // Jakarta Utara
   const [warehouses, setWarehouses] = useState<Warehouse[]>([
     { name: "Jakarta Pusat", position: [-6.1751, 106.8650] },
@@ -40,7 +28,7 @@ const MapComponent: React.FC = () => {
     iconSize: [22, 32],
   });
 
-  const handleMarkerDrag = (index: number, newPosition: LatLngExpression) => {
+  const handleMarkerDrag = (index: number, newPosition: LatLngTuple) => {
     setWarehouses(prevWarehouses => {
       const updatedWarehouses = [...prevWarehouses];
       updatedWarehouses[index].position = newPosition;

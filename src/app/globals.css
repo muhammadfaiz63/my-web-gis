@@ -26,6 +26,35 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.leaflet-routing-add-waypoint {
+  width: 50px
+}
+
+.leftlet-top .leaflet-right {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.leaflet-routing-geocoder {
+  font-size: 13px;
+}
+
+/* .leaflet-routing-container, .leaflet-routing-error {
+  width: 360px;
+  background-color: white;
+  padding-top: 4px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+} */
+
+input {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
